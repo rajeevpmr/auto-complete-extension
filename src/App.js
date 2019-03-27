@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
-import logo from './logo.svg';
+import { initApi } from "./api";
+
+//import logo from './logo.svg';
 //import './App.css';
 
 const options = [
@@ -10,15 +12,35 @@ const options = [
 ];
 
 class App extends Component {
-  state = {
-    selectedOption: null,
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      api: {},
+      options: options,
+      value: ""
+    };
   }
+
+  componentWillMount() {
+    initApi(api => {
+      api.window.startAutoResizer();
+      this.setState({
+        value: "",
+        api: api,
+        options: options
+      });
+    });
+  }
+  
   handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
+    api.field.setValue(selectedOption);
+    this.state.value = selectedOption;
     console.log(`Option selected:`, selectedOption);
   }
+  
   render() {
-    const { selectedOption } = this.state;
+    const { selectedOption } = this.state.value;
 
     return (
       <Select
