@@ -1,0 +1,23 @@
+
+{
+    "name": "Autocomplete Example",
+    "id": "contentful-ui-autocomplete",
+    "fieldTypes": ["Object"],
+    "srcdoc": ".src/index.js",
+    "parameters": {
+      "instance": [
+        {
+          "id": "apiToken",
+          "name": "Weather Read-only Storefront Access Token",
+          "type": "Symbol",
+          "default": "b5392a6d4ba10c47cb4ad1645bf78eb4"
+        },
+        {
+          "id": "apiEndpoint",
+          "name": "Weather API endpoint",
+          "type": "Symbol",
+          "default": "https://contentful-demo.myshopify.com/api/graphql"
+        }
+      ]
+    }
+  }
