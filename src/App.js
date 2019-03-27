@@ -47,6 +47,7 @@ class App extends Component {
   }
   
   handleChange = (selectedOption) => {
+    const { api, value, options } = this.state;
     api.field.setValue(selectedOption);
     this.state.value = selectedOption;
     console.log(`Option selected:`, selectedOption);
