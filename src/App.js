@@ -32,13 +32,26 @@ class App extends Component {
       });
     });
   }
+
+  componentDidMount(){
+    const css = document.createElement("css");
+    script.src = "https://contentful.github.io/ui-extensions-sdk/cf-extension.css";
+    script.async = true;
+    document.body.appendChild(css);
+
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/contentful-ui-extensions-sdk@3";
+    script.async = true;
+    document.body.appendChild(script);
+
+  }
   
   handleChange = (selectedOption) => {
     api.field.setValue(selectedOption);
     this.state.value = selectedOption;
     console.log(`Option selected:`, selectedOption);
   }
-  
+
   render() {
     const { selectedOption } = this.state.value;
 

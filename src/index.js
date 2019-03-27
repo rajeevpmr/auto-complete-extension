@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'https://contentful.github.io/ui-extensions-sdk/cf-extension.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
