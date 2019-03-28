@@ -60,11 +60,14 @@ class App extends React.Component {
     const { selectedOption } = this.state.value;
 
     return (
+      <div className="App">
+      <p> Can atleast this come </p>
       <Select
         value={selectedOption}
         onChange={this.onChange}
         options={options}
       />
+      </div>
     );
   }
 }
